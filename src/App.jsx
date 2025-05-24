@@ -56,7 +56,7 @@ const App = () => {
           if (data.status === "SUCCESS") {
             console.log("my_designs", data.result);
 
-            // displaying only the first image
+            // getting only the first design
             setResult(data.result.generated_designs[0]);
             clearInterval(interval);
           } else if (data.status === "FAILURE") {
@@ -91,7 +91,7 @@ const App = () => {
       {status === "SUCCESS" && (
         <div>
           <p>Design generated successfully!</p>
-          {/* Displaying only the first image */}
+          {/* Displaying only the first design */}
           <img
             src={`http://127.0.0.1:8003/img/${result}`}
             alt="Generated design"
